@@ -14,3 +14,5 @@ This reads in `serverless.config.dev.yml`, replace `dev` with the desired
 stage, and sets those environment variables accordingly.
 
 Deploy this and see `process.env` in the response to the HTTP event.
+
+The config files normally wouldn't be committed to Git.

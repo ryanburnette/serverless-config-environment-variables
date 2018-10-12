@@ -1,0 +1,13 @@
+service: serverless-config-environment-variables
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+  environment: ${file(./serverless.config.${self:provider.stage}.yml)}
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
